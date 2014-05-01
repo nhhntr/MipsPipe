@@ -53,7 +53,7 @@ module controller(
 	wire memwriteE;
 
 	maindec md(opD, memtoregD, memwriteD, branchD, alusrcD, regdstD, regwriteD, jumpD, aluopD);
-	aludec ad(functD, aluopD, alucontrolD);
+	aluctrl ad(functD, aluopD, alucontrolD);
 
 	assign pcsrcD = {jumpD, (branchD & equalD)};
 
@@ -95,7 +95,7 @@ module maindec(
 
 endmodule
 
-module aludec(
+module aluctrl(
 
 	input [5:0] funct,
 	input [1:0] aluop,
@@ -358,9 +358,9 @@ endmodule
 
 module adder (
 
-input [31:0] a, 
-input [31:0] b,
-output [31:0] y);
+	input [31:0] a, 
+	input [31:0] b,
+	output [31:0] y);
 
 	assign y = a + b;
 
@@ -368,25 +368,24 @@ endmodule
 
 module signext (
 
-input [15:0] a,
-output [31:0] y);
+	input [15:0] a,
+	output [31:0] y);
 	
-assign y = {{16{a[15]}}, a};
+	assign y = {{16{a[15]}}, a};
 
 endmodule
 
 module sl2 (
 
-input [31:0] a,
-output [31:0] y);
+	input [31:0] a,
+	output [31:0] y);
 
 	// shift left by 2
-assign y = {a[29:0], 2'b00};
+	assign y = {a[29:0], 2'b00};
 
 endmodule 
 
 module mux2 # (parameter WIDTH = 8) (
-
 input [WIDTH-1:0] d0, 
 input [WIDTH-1:0] d1, 
 input s, 
@@ -397,7 +396,6 @@ output [WIDTH-1:0] y);
 endmodule 
 
 module mux3 #(parameter WIDTH = 8) (
-
 input [WIDTH-1:0] d0,
 input [WIDTH-1:0] d1,
 input [WIDTH-1:0] d2, 
@@ -426,7 +424,7 @@ output [31:0] rd2);
 	// write third port on rising edge of clock
 	// register 0 hardwired to 0
 	//Note: for pipelined processor, write third port 
-   // on falling edge of clk
+    // on falling edge of clk
 	
 	always @ (negedge clk)
 		if (we3) rf[wa3] <= wd3;
