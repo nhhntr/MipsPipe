@@ -1,9 +1,13 @@
-module mips(clk, reset, pcF, instrF, memwriteM, aluoutM, writedataM, readdataM);
+module mips(
 
-	input clk, reset;
-	input [31:0] instrF, readdataM;
-	output [31:0] pcF, aluoutM, writedataM;
-	output memwriteM;
+	input clk, 
+	input reset,
+	input [31:0] instrF, 
+	input readdataM,
+	output [31:0] pcF, 
+	output [31:0] aluoutM, 
+	output [31:0] writedataM,
+	output memwriteM);
 	
 	wire [5:0] opD, functD;
 	wire [1:0] pcsrcD;
@@ -21,15 +25,27 @@ module mips(clk, reset, pcF, instrF, memwriteM, aluoutM, writedataM, readdataM);
 endmodule
 
 	
-module controller(clk, reset, opD, functD, flushE, equalD, memtoregE, memtoregM, memtoregW, memwriteM, pcsrcD,
-						branchD, alusrcE, regdstE, regwriteE, regwriteM, regwriteW, jumpD, alucontrolE);
+module controller(
 
-	input clk, reset, flushE, equalD;
-	input [5:0] opD, functD;
-	output memtoregE, memtoregM, memtoregW, memwriteM, branchD; 
-	output alusrcE, regdstE, regwriteE, regwriteM, regwriteW, jumpD;
-	output [2:0] alucontrolE;
-	output [1:0]pcsrcD;
+	input clk, 
+	input reset, 
+	input flushE, 
+	input equalD,
+	input [5:0] opD, 
+	input [5:0] functD,
+	output memtoregE,
+	output memtoregM, 
+	output memtoregW, 
+	output memwriteM, 
+	output branchD, 
+	output alusrcE, 
+	output regdstE, 
+	output regwriteE, 
+	output regwriteM, 
+	output regwriteW, 
+	output jumpD,
+	output [2:0] alucontrolE,
+	output [1:0]pcsrcD);
 	
 	wire [1:0] aluopD;
 	wire memtoregD, memwriteD, alusrcD, regdstD, regwriteD;
@@ -50,11 +66,17 @@ module controller(clk, reset, opD, functD, flushE, equalD, memtoregE, memtoregM,
 
 endmodule
 
-module maindec(op, memtoreg, memwrite, branch, alusrc, regdst, regwrite, jump, aluop);
+module maindec(
 
-	input [5:0] op;
-	output memtoreg, memwrite, branch, alusrc, regdst, regwrite, jump;
-	output [1:0] aluop;
+	input [5:0] op,
+	output memtoreg, 
+	output memwrite, 
+	output branch, 
+	output alusrc, 
+	output regdst, 
+	output regwrite, 
+	output jump,
+	output [1:0] aluop);
 	
 	reg [8:0] controls;
 
@@ -73,11 +95,11 @@ module maindec(op, memtoreg, memwrite, branch, alusrc, regdst, regwrite, jump, a
 
 endmodule
 
-module aludec(funct, aluop, alucontrol);
+module aludec(
 
-	input [5:0] funct;
-	input [1:0] aluop;
-	output reg [2:0] alucontrol;
+	input [5:0] funct,
+	input [1:0] aluop,
+	output reg [2:0] alucontrol);
 	
 	always @(*)
 		case(aluop)
@@ -96,17 +118,31 @@ module aludec(funct, aluop, alucontrol);
 
 endmodule
 
-module datapath(clk, reset, memtoregE, memtoregM, memtoregW, pcsrcD, branchD, alusrcE, regdstE, regwriteE, regwriteM,
-						regwriteW, jumpD, alucontrolE, equalD, pcF, instrF, aluoutM, writedataM, readdataM, opD, functD,
-							flushE);
+module datapath(
 
-	input clk, reset, memtoregE, memtoregM, memtoregW, branchD, alusrcE, regdstE, regwriteE, regwriteM, regwriteW, jumpD;
-	input [2:0] alucontrolE;
+	input clk, 
+	input reset, 
+	input memtoregE, 
+	input memtoregM, 
+	input memtoregW, 
+	input branchD, 
+	input alusrcE, 
+	input regdstE, 
+	input regwriteE, 
+	input regwriteM, 
+	input regwriteW, 
+	input jumpD,
+	input [2:0] alucontrolE,
 	input [1:0] pcsrcD;
-	input [31:0] instrF, readdataM;
-	output equalD, flushE;
-	output [5:0] opD, functD;
-	output [31:0] pcF, aluoutM, writedataM;
+	input [31:0] instrF, 
+	input [31:0] readdataM,
+	output equalD, 
+	output flushE,
+	output [5:0] opD, 
+	output [5:0] functD,
+	output [31:0] pcF, 
+	output [31:0] aluoutM, 
+	output [31:0] writedataM);
 	
 	wire forwardaD, forwardbD;
 	wire [1:0] forwardaE, forwardbE;
@@ -187,14 +223,29 @@ module datapath(clk, reset, memtoregE, memtoregM, memtoregW, pcsrcD, branchD, al
 
 endmodule
 
-module hazard(rsD, rtD, rsE, rtE, writeregE, writeregM, writeregW, regwriteE, regwriteM, regwriteW, memtoregE,
-					memtoregM, branchD, forwardaD, forwardbD, forwardaE, forwardbE, stallF, stallD, flushE, jumpD);
+module hazard(
 
-	input [4:0] rsD, rtD, rsE, rtE, writeregE, writeregM, writeregW;
-	input regwriteE, regwriteM, regwriteW, memtoregE, memtoregM, branchD;
+	input [4:0] rsD, 
+	input [4:0] rtD, 
+	input [4:0] rsE, 
+	input [4:0] rtE, 
+	input [4:0] writeregE, 
+	input [4:0] writeregM, 
+	input [4:0] writeregW,
+	input regwriteE, 
+	input regwriteM, 
+	input regwriteW, 
+	input memtoregE, 
+	input memtoregM, 
+	input branchD,
 	input jumpD;
-	output forwardaD, forwardbD, stallF, stallD, flushE;
-	output reg [1:0] forwardaE, forwardbE;
+	output forwardaD, 
+	output forwardbD, 
+	output stallF, 
+	output stallD, 
+	output flushE,
+	output reg [1:0] forwardaE, 
+	output forwardbE);
 
 	wire lwstallD, branchstallD;
 
@@ -236,10 +287,11 @@ module hazard(rsD, rtD, rsE, rtE, writeregE, writeregM, writeregW, regwriteE, re
 
 endmodule
 
-module eqcmp # (parameter WIDTH = 8) (a, b, y);
+module eqcmp # (parameter WIDTH = 8) (
 
-	input [WIDTH-1:0] a, b;
-	output y;
+	input [WIDTH-1:0] a, 
+	input [WIDTH-1:0] b,
+	output y);
 
 	assign y = (a === b);
 		
@@ -247,12 +299,12 @@ endmodule
 
 
 
-module alu(A,B,F,Y);
+module alu(
 	
-	input [31:0] A;
-	input [31:0] B;
-	input [2:0] F;
-	output reg [31:0] Y;
+	input [31:0] A,
+	input [31:0] B,
+	input [2:0] F,
+	output reg [31:0] Y);
 	
 	wire Cin;
 	wire [31:0] ss, outb;
@@ -304,54 +356,68 @@ module alu(A,B,F,Y);
 
 endmodule
 
-module adder (a, b, y);
+module adder (
 
-	input [31:0] a, b;
-	output [31:0] y;
+input [31:0] a, 
+input [31:0] b,
+output [31:0] y);
 
 	assign y = a + b;
 
 endmodule 
 
-module signext (a, y);
+module signext (
 
-	input [15:0] a;
-	output [31:0] y;
+input [15:0] a,
+output [31:0] y);
 	
-	assign y = {{16{a[15]}}, a};
+assign y = {{16{a[15]}}, a};
 
 endmodule
 
-module sl2 (a, y);
+module sl2 (
 
-	input [31:0] a;
-	output [31:0] y;
+input [31:0] a,
+output [31:0] y);
 
 	// shift left by 2
-	assign y = {a[29:0], 2'b00};
+assign y = {a[29:0], 2'b00};
 
 endmodule 
 
-module mux2 # (parameter WIDTH = 8)
-				  (input [WIDTH-1:0] d0, d1, input s, output [WIDTH-1:0] y);
+module mux2 # (parameter WIDTH = 8) (
+
+input [WIDTH-1:0] d0, 
+input [WIDTH-1:0] d1, 
+input s, 
+output [WIDTH-1:0] y);
 
 	assign y = s ? d1 : d0;
 
 endmodule 
 
-module mux3 #(parameter WIDTH = 8)
-				 (input [WIDTH-1:0] d0, d1, d2, input [1:0] s, output [WIDTH-1:0] y);
+module mux3 #(parameter WIDTH = 8) (
+
+input [WIDTH-1:0] d0,
+input [WIDTH-1:0] d1,
+input [WIDTH-1:0] d2, 
+input [1:0] s, 
+output [WIDTH-1:0] y);
 
 	assign  y = s[1] ? d2 : (s[0] ? d1 : d0);
 
 endmodule 
 
-module regfile (clk, we3, ra1, ra2, wa3, wd3, rd1, rd2);
+module regfile (
 
-	input clk, we3;
-	input [4:0] ra1, ra2, wa3;
-	input [31:0] wd3;
-	output [31:0] rd1, rd2;
+input clk, 
+input we3,
+input [4:0] ra1,
+input [4:0]	ra2,
+input [4:0] wa3,
+input [31:0] wd3,
+output [31:0] rd1,
+output [31:0] rd2);
 
 	reg [31:0] rf[63:0];
 
@@ -370,8 +436,12 @@ module regfile (clk, we3, ra1, ra2, wa3, wd3, rd1, rd2);
 
 endmodule 
 
-module flopr # (parameter WIDTH = 8)
-					(input clk, reset, input [WIDTH-1:0] d, output reg [WIDTH-1:0] q);
+module flopr # (parameter WIDTH = 8) (
+
+input clk, 
+input reset, 
+input [WIDTH-1:0] d, 
+output reg [WIDTH-1:0] q);
 
 	always @ (posedge clk, posedge reset)
 		if (reset) q <= 0;
@@ -379,8 +449,13 @@ module flopr # (parameter WIDTH = 8)
 
 endmodule 
 
-module floprc #(parameter WIDTH = 8)
-					(input clk, reset, clear, input [WIDTH-1:0] d, output reg [WIDTH-1:0] q);
+module floprc #(parameter WIDTH = 8) (
+
+input clk, 
+input reset, 
+input clear, 
+input [WIDTH-1:0] d, 
+output reg [WIDTH-1:0] q);
 
 	always @(posedge clk, posedge reset)
 		if (reset) q <= #1 0;
@@ -389,8 +464,13 @@ module floprc #(parameter WIDTH = 8)
 
 endmodule
 
-module flopenr #(parameter WIDTH = 8)
-					 (input clk, reset, en, input [WIDTH-1:0] d, output reg [WIDTH-1:0] q);
+module flopenr #(parameter WIDTH = 8) (
+
+input clk, 
+input reset, 
+input en, 
+input [WIDTH-1:0] d, 
+output reg [WIDTH-1:0] q);
 
 	always @(posedge clk, posedge reset)
 		if (reset) q <= #1 0;
@@ -398,8 +478,14 @@ module flopenr #(parameter WIDTH = 8)
 
 endmodule
 
-module flopenrc #(parameter WIDTH = 8)
-					  (input clk, reset, input en, clear, input [WIDTH-1:0] d, output reg [WIDTH-1:0] q);
+module flopenrc #(parameter WIDTH = 8) (
+
+input clk, 
+input reset, 
+input en, 
+input clear, 
+input [WIDTH-1:0] d, 
+output reg [WIDTH-1:0] q);
 
 	always @(posedge clk, posedge reset)
 		if (reset) q <= #1 0;
@@ -408,10 +494,10 @@ module flopenrc #(parameter WIDTH = 8)
 
 endmodule
 
-/*module imem(a, rd);
+/*module imem(
 
 	input [5:0] a;
-	output [31:0] rd
+	output [31:0] rd);
 
 	reg [31:0] RAM[63:0];
 
@@ -423,11 +509,13 @@ endmodule
 
 endmodule
 
-module dmem(clk, we, a, wd, rd);
+module dmem(
 
-	input clk, we;
-	input [31:0] a, wd;
-	output [31:0] rd;
+	input clk, 
+	input we,
+	input [31:0] a, 
+	input [31:0] wd,
+	output [31:0] rd);
 	
 
 	reg [31:0] RAM[63:0];
