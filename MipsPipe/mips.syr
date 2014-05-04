@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: mips.prj
 
@@ -112,13 +112,76 @@ Parsing module <maindec>.
 Parsing module <aluctrl>.
 Parsing module <datapath>.
 Parsing module <hazard>.
-ERROR:HDLCompiler:806 - "C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v" Line 241: Syntax error near ";".
-Verilog file C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v ignored due to errors
---> 
+Parsing module <eqcmp>.
+Parsing module <alu>.
+Parsing module <adder>.
+Parsing module <signext>.
+Parsing module <sl2>.
+Parsing module <mux2>.
+Parsing module <mux3>.
+Parsing module <regfile>.
+Parsing module <flopr>.
+Parsing module <floprc>.
+Parsing module <flopenr>.
+Parsing module <flopenrc>.
 
-Total memory usage is 237744 kilobytes
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
 
-Number of errors   :    1 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Elaborating module <mips>.
 
+Elaborating module <controller>.
+
+Elaborating module <maindec>.
+
+Elaborating module <aluctrl>.
+
+Elaborating module <floprc(WIDTH=8)>.
+
+Elaborating module <flopr(WIDTH=3)>.
+
+Elaborating module <flopr(WIDTH=2)>.
+WARNING:HDLCompiler:189 - "C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v" Line 18: Size mismatch in connection of port <flushE>. Formal port size is 1-bit while actual signal size is 6-bit.
+WARNING:HDLCompiler:189 - "C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v" Line 19: Size mismatch in connection of port <alucontrolE>. Formal port size is 3-bit while actual signal size is 1-bit.
+
+Elaborating module <datapath>.
+
+Elaborating module <hazard>.
+WARNING:HDLCompiler:189 - "C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v" Line 167: Size mismatch in connection of port <forwardbD>. Formal port size is 1-bit while actual signal size is 2-bit.
+
+Elaborating module <mux3(WIDTH=32)>.
+
+Elaborating module <regfile>.
+
+Elaborating module <flopenr(WIDTH=32)>.
+
+Elaborating module <adder>.
+
+Elaborating module <flopenrc(WIDTH=32)>.
+
+Elaborating module <signext>.
+
+Elaborating module <sl2>.
+
+Elaborating module <mux2(WIDTH=32)>.
+
+Elaborating module <eqcmp(WIDTH=32)>.
+
+Elaborating module <floprc(WIDTH=32)>.
+
+Elaborating module <floprc(WIDTH=5)>.
+
+Elaborating module <alu>.
+
+Elaborating module <mux2(WIDTH=5)>.
+
+Elaborating module <flopr(WIDTH=32)>.
+
+Elaborating module <flopr(WIDTH=5)>.
+WARNING:HDLCompiler:634 - "C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v" Line 147: Net <forwardaD> does not have a driver.
+WARNING:HDLCompiler:189 - "C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v" Line 21: Size mismatch in connection of port <branchD>. Formal port size is 1-bit while actual signal size is 2-bit.
+WARNING:HDLCompiler:189 - "C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v" Line 22: Size mismatch in connection of port <alucontrolE>. Formal port size is 3-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:1127 - "C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v" Line 22: Assignment to instrF ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v" Line 23: Size mismatch in connection of port <pcF>. Formal port size is 32-bit while actual signal size is 6-bit.
+WARNING:HDLCompiler:634 - "C:\Users\r00tk17\Documents\GitHub\MipsPipe\pipeline.v" Line 16: Net <equalD> does not have a driver.

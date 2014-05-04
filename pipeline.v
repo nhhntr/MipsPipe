@@ -238,14 +238,14 @@ module hazard(
 	input memtoregE, 
 	input memtoregM, 
 	input branchD,
-	input jumpD;
+	input jumpD,
 	output forwardaD, 
 	output forwardbD, 
 	output stallF, 
 	output stallD, 
 	output flushE,
 	output reg [1:0] forwardaE, 
-	output forwardbE);
+	output reg [1:0] forwardbE);
 
 	wire lwstallD, branchstallD;
 
