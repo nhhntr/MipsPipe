@@ -133,7 +133,7 @@ module datapath(
 	input regwriteW, 
 	input jumpD,
 	input [2:0] alucontrolE,
-	input [1:0] pcsrcD;
+	input [1:0] pcsrcD,
 	input [31:0] instrF, 
 	input [31:0] readdataM,
 	output equalD, 
