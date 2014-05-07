@@ -6,8 +6,8 @@
 //
 // Create Date:   17:42:18 04/10/2014
 // Design Name:   mips
-// Module Name:   C:/Users/Adam/Desktop/2013-2014/Spring 2014/Computer Org/tester1/testbench.v
-// Project Name:  tester1
+// Module Name:   testbench
+// Project Name:  MIPSPIPE22
 // Target Device:  
 // Tool versions:  
 // Description: 
