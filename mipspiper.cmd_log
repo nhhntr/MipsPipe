@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Users/r00tk17/Xilinx/MIPSPIPE22/mipspiper.xst" -ofn "C:/Users/r00tk17/Xilinx/MIPSPIPE22/mipspiper.syr" 
+xst -intstyle ise -ifn "C:/Users/r00tk17/Xilinx/MIPSPIPE22/mipspiper.xst" -ofn "C:/Users/r00tk17/Xilinx/MIPSPIPE22/mipspiper.syr" 

@@ -1,0 +1,47 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/r00tk17/Xilinx/MIPSPIPE22/testbench_isim_beh.exe -prj C:/Users/r00tk17/Xilinx/MIPSPIPE22/testbench_beh.prj work.testbench work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/r00tk17/Xilinx/MIPSPIPE22/pipeline2.v" into library work
+Analyzing Verilog file "C:/Users/r00tk17/Xilinx/MIPSPIPE22/testbench2.v" into library work
+WARNING:HDLCompiler:687 - "C:/Users/r00tk17/Xilinx/MIPSPIPE22/testbench2.v" Line 85: Illegal redeclaration of module <imem>.
+WARNING:HDLCompiler:687 - "C:/Users/r00tk17/Xilinx/MIPSPIPE22/testbench2.v" Line 97: Illegal redeclaration of module <dmem>.
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module maindec
+Compiling module aludec
+Compiling module floprc
+Compiling module flopr(WIDTH=3)
+Compiling module flopr(WIDTH=2)
+Compiling module controller
+Compiling module hazard
+Compiling module mux3(WIDTH=32)
+Compiling module regfile
+Compiling module flopenr(WIDTH=32)
+Compiling module adder
+Compiling module flopenrc(WIDTH=32)
+Compiling module signext
+Compiling module sl2
+Compiling module mux2(WIDTH=32)
+Compiling module eqcmp(WIDTH=32)
+Compiling module floprc(WIDTH=32)
+Compiling module floprc(WIDTH=5)
+Compiling module alu
+Compiling module mux2(WIDTH=5)
+Compiling module flopr(WIDTH=32)
+Compiling module flopr(WIDTH=5)
+Compiling module datapath
+Compiling module mips
+Compiling module imem
+Compiling module dmem
+Compiling module top
+Compiling module testbench
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 22 sub-compilation(s) to finish...
+Compiled 29 Verilog Units
+Built simulation executable C:/Users/r00tk17/Xilinx/MIPSPIPE22/testbench_isim_beh.exe
+Fuse Memory Usage: 28196 KB
+Fuse CPU Usage: 888 ms
