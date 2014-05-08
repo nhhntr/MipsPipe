@@ -5,7 +5,7 @@
 // 
 // Create Date:    01:56:35 04/27/2014 
 // Design Name: 
-// Module Name:    pipeline 
+// Module Name:    mipspipe 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
