@@ -164,8 +164,8 @@ module datapath(clk, reset, memtoregE, memtoregM, memtoregW, pcsrcD, branchD, al
 	RegWenablec #(32) r2D(clk, reset, ~stallD, flushD, instrF, instrD);
 	
 	// Decode stage
-	signext se(instrD[15:0], signimmD);
-	sl2 immsh(signimmD, signimmshD);
+	signext ext(instrD[15:0], signimmD);
+	ShiftL2 immsh(signimmD, signimmshD);
 	adder pcadd2(pcplus4D, signimmshD, pcbranchD);
 	mux2input #(32) forwardadmux(srcaD, aluoutM, forwardaD, srca2D);
 	mux2input #(32) forwardbdmux(srcbD, aluoutM, forwardbD, srcb2D);
@@ -316,7 +316,7 @@ module signext (a, y);
 
 endmodule
 
-module sl2 (a, y);
+module ShiftL2 (a, y);
 
 	input [31:0] a;
 	output [31:0] y;

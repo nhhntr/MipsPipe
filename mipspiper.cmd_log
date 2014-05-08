@@ -1,2 +1,6 @@
 xst -intstyle ise -ifn "C:/Users/r00tk17/Xilinx/MIPSPIPE22/mipspiper.xst" -ofn "C:/Users/r00tk17/Xilinx/MIPSPIPE22/mipspiper.syr" 
 xst -intstyle ise -ifn "C:/Users/r00tk17/Xilinx/MIPSPIPE22/mipspiper.xst" -ofn "C:/Users/r00tk17/Xilinx/MIPSPIPE22/mipspiper.syr" 
+xst -intstyle ise -ifn "C:/Users/r00tk17/Documents/GitHub/MipsPipe/mipspiper.xst" -ofn "C:/Users/r00tk17/Documents/GitHub/MipsPipe/mipspiper.syr" 
+xst -intstyle ise -ifn "C:/Users/r00tk17/Documents/GitHub/MipsPipe/mipspiper.xst" -ofn "C:/Users/r00tk17/Documents/GitHub/MipsPipe/mipspiper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 mipspiper.ngc mipspiper.ngd  
+xst -intstyle ise -ifn "C:/Users/r00tk17/Documents/GitHub/MipsPipe/mipspiper.xst" -ofn "C:/Users/r00tk17/Documents/GitHub/MipsPipe/mipspiper.syr" 

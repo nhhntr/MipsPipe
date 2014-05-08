@@ -105,7 +105,7 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v" into library work
+Analyzing Verilog file "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v" into library work
 Parsing module <mipspiper>.
 Parsing module <controller>.
 Parsing module <maindec>.
@@ -116,7 +116,7 @@ Parsing module <eqcmp>.
 Parsing module <alu>.
 Parsing module <adder>.
 Parsing module <signext>.
-Parsing module <sl2>.
+Parsing module <ShiftL2>.
 Parsing module <mux2input>.
 Parsing module <mux3input>.
 Parsing module <regfile>.
@@ -161,7 +161,7 @@ Elaborating module <RegWenablec(WIDTH=32)>.
 
 Elaborating module <signext>.
 
-Elaborating module <sl2>.
+Elaborating module <ShiftL2>.
 
 Elaborating module <mux2input(WIDTH=32)>.
 
@@ -184,31 +184,31 @@ Elaborating module <RegWOClear(WIDTH=5)>.
 =========================================================================
 
 Synthesizing Unit <mipspiper>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
     Summary:
 	no macro.
 Unit <mipspiper> synthesized.
 
 Synthesizing Unit <controller>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
     Summary:
 	no macro.
 Unit <controller> synthesized.
 
 Synthesizing Unit <maindec>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
     Summary:
 	no macro.
 Unit <maindec> synthesized.
 
 Synthesizing Unit <aludec>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
     Summary:
 	no macro.
 Unit <aludec> synthesized.
 
 Synthesizing Unit <RegWClr_1>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 8
     Found 8-bit register for signal <q>.
     Summary:
@@ -217,7 +217,7 @@ Synthesizing Unit <RegWClr_1>.
 Unit <RegWClr_1> synthesized.
 
 Synthesizing Unit <RegWOClear_1>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 3
     Found 3-bit register for signal <q>.
     Summary:
@@ -225,7 +225,7 @@ Synthesizing Unit <RegWOClear_1>.
 Unit <RegWOClear_1> synthesized.
 
 Synthesizing Unit <RegWOClear_2>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 2
     Found 2-bit register for signal <q>.
     Summary:
@@ -233,13 +233,13 @@ Synthesizing Unit <RegWOClear_2>.
 Unit <RegWOClear_2> synthesized.
 
 Synthesizing Unit <datapath>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
     Summary:
 	no macro.
 Unit <datapath> synthesized.
 
 Synthesizing Unit <hazard>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
     Found 5-bit comparator equal for signal <rsD[4]_writeregM[4]_equal_2_o> created at line 222
     Found 5-bit comparator equal for signal <rtD[4]_writeregM[4]_equal_4_o> created at line 223
     Found 5-bit comparator equal for signal <rsE[4]_writeregM[4]_equal_6_o> created at line 231
@@ -256,14 +256,14 @@ Synthesizing Unit <hazard>.
 Unit <hazard> synthesized.
 
 Synthesizing Unit <mux3input>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 32
     Summary:
 	inferred   2 Multiplexer(s).
 Unit <mux3input> synthesized.
 
 Synthesizing Unit <regfile>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
 WARNING:Xst:3015 - Contents of array <rf> may be accessed with an index that does not cover the full array size or with a negative index. The RAM size is reduced to the index upper access or for only positive index values.
     Found 32x32-bit dual-port RAM <Mram_rf> for signal <rf>.
     Summary:
@@ -272,7 +272,7 @@ WARNING:Xst:3015 - Contents of array <rf> may be accessed with an index that doe
 Unit <regfile> synthesized.
 
 Synthesizing Unit <RegWenable>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 32
     Found 32-bit register for signal <q>.
     Summary:
@@ -280,14 +280,14 @@ Synthesizing Unit <RegWenable>.
 Unit <RegWenable> synthesized.
 
 Synthesizing Unit <adder>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
     Found 32-bit adder for signal <y> created at line 306.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 Unit <adder> synthesized.
 
 Synthesizing Unit <RegWenablec>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 32
     Found 32-bit register for signal <q>.
     Summary:
@@ -296,27 +296,27 @@ Synthesizing Unit <RegWenablec>.
 Unit <RegWenablec> synthesized.
 
 Synthesizing Unit <signext>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
     Summary:
 	no macro.
 Unit <signext> synthesized.
 
-Synthesizing Unit <sl2>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+Synthesizing Unit <ShiftL2>.
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
 WARNING:Xst:647 - Input <a<31:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	no macro.
-Unit <sl2> synthesized.
+Unit <ShiftL2> synthesized.
 
 Synthesizing Unit <mux2input_1>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 32
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux2input_1> synthesized.
 
 Synthesizing Unit <eqcmp>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 32
     Found 32-bit comparator equal for signal <y> created at line 259
     Summary:
@@ -324,7 +324,7 @@ Synthesizing Unit <eqcmp>.
 Unit <eqcmp> synthesized.
 
 Synthesizing Unit <RegWClr_2>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 32
     Found 32-bit register for signal <q>.
     Summary:
@@ -333,7 +333,7 @@ Synthesizing Unit <RegWClr_2>.
 Unit <RegWClr_2> synthesized.
 
 Synthesizing Unit <RegWClr_3>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 5
     Found 5-bit register for signal <q>.
     Summary:
@@ -342,7 +342,7 @@ Synthesizing Unit <RegWClr_3>.
 Unit <RegWClr_3> synthesized.
 
 Synthesizing Unit <alu>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
     Found 32-bit adder for signal <n0094> created at line 276.
     Found 32-bit adder for signal <ss> created at line 276.
     Found 32-bit adder for signal <n0100> created at line 291.
@@ -420,14 +420,14 @@ WARNING:Xst:737 - Found 1-bit latch for signal <Y<31>>. Latches may be generated
 Unit <alu> synthesized.
 
 Synthesizing Unit <mux2input_2>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 5
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux2input_2> synthesized.
 
 Synthesizing Unit <RegWOClear_3>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 32
     Found 32-bit register for signal <q>.
     Summary:
@@ -435,7 +435,7 @@ Synthesizing Unit <RegWOClear_3>.
 Unit <RegWOClear_3> synthesized.
 
 Synthesizing Unit <RegWOClear_4>.
-    Related source file is "C:\Users\r00tk17\Xilinx\MIPSPIPE22\peterpiper.v".
+    Related source file is "C:\Users\r00tk17\Documents\GitHub\MipsPipe\peterpiper.v".
         WIDTH = 5
     Found 5-bit register for signal <q>.
     Summary:
@@ -834,7 +834,7 @@ clk            |         |         |    7.055|         |
 
 
 Total REAL time to Xst completion: 27.00 secs
-Total CPU time to Xst completion: 26.92 secs
+Total CPU time to Xst completion: 26.85 secs
  
 --> 
 
